@@ -1,0 +1,53 @@
+{
+  "name": "react-proview",
+  "version": "1.0.0",
+  "description": "React ",
+  "main": "dist/react-proview.js",
+  "scripts": {
+    "start": "webpack-dev-server --config demo/webpack.config.js --hot --inline",
+    "test": "npm run lint && npm run test-only",
+    "test-only": "cross-env BABEL_ENV=test nyc mocha",
+    "build": "npm run build:umd && npm run build:esm",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir dist/esm",
+    "build:umd": "cross-env BABEL_ENV=umd webpack --mode=production",
+    "lint": "eslint src webpack.config.js test --ext .js,.jsx",
+    "release":"release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:talview/react-proview"
+  },
+  "keywords": [
+    "Proview",
+    "React",
+    "Remote",
+    "Proctoring"
+  ],
+  "author": "Talview Inc",
+  "contributors": [
+    "@manquer"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/talview/react-proview/issues"
+  },
+  "homepage": "https://github.com/talview/react-proview#readme",
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^15.6.2 || ^16.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
