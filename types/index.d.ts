@@ -12,3 +12,5 @@ export interface InitOptions {
 }
 
 export function init(token: string, options?: InitOptions): void;
+
+export function stop(callback: Function): void;
