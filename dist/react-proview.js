@@ -175,8 +175,11 @@ function init(token, options) {
   opts.session = opts.session || "v4".concat(Math.random());
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
-  (0, _load["default"])(opts);
-  tv('init', token, opts);
+
+  if (typeof ProctorClient3 === 'undefined') {
+    (0, _load["default"])(opts);
+    tv('init', token, opts);
+  }
 }
 
 function stop(cb) {

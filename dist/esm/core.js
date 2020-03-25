@@ -57,8 +57,11 @@ export function init(token, options) {
   opts.session = opts.session || "v4".concat(Math.random());
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
-  load(opts);
-  tv('init', token, opts);
+
+  if (typeof ProctorClient3 === 'undefined') {
+    load(opts);
+    tv('init', token, opts);
+  }
 }
 export function stop(cb) {
   ProctorClient3.stop(cb); // wrap and promisify
