@@ -1,6 +1,6 @@
 {
   "name": "react-proview",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React ",
   "main": "dist/react-proview.js",
   "scripts": {
