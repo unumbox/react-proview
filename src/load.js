@@ -1,5 +1,7 @@
 export default function (opts) {
-  const url = opts.url || '//cdn.proview.io/init.js';
+  const version = opts.version || 4;
+  const defaultUrl = (version == 5 ? '//cdn.proview.io/v5/init.js' : '//cdn.proview.io/init.js');
+  const url = opts.url || defaultUrl;
   /* eslint-disable */
   (function(i,s,o,g,r,a,m){i['TalviewProctor']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
