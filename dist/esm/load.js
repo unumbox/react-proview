@@ -1,5 +1,7 @@
 export default function (opts) {
-  var url = opts.url || '//cdn.proview.io/init.js';
+  var version = opts.version || 4;
+  var defaultUrl = version == 5 ? '//cdn.proview.io/v5/init.js' : '//cdn.proview.io/init.js';
+  var url = opts.url || defaultUrl;
   /* eslint-disable */
 
   (function (i, s, o, g, r, a, m) {

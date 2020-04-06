@@ -58,7 +58,7 @@ export function init(token, options) {
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
 
-  if (typeof ProctorClient3 === 'undefined') {
+  if (typeof window.ProctorClient3 === 'undefined') {
     load(opts);
     tv('init', token, opts);
   }

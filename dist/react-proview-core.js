@@ -176,7 +176,7 @@ function init(token, options) {
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
 
-  if (typeof ProctorClient3 === 'undefined') {
+  if (typeof window.ProctorClient3 === 'undefined') {
     (0, _load["default"])(opts);
     tv('init', token, opts);
   }
@@ -206,7 +206,9 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = _default;
 
 function _default(opts) {
-  var url = opts.url || '//cdn.proview.io/init.js';
+  var version = opts.version || 4;
+  var defaultUrl = version == 5 ? '//cdn.proview.io/v5/init.js' : '//cdn.proview.io/init.js';
+  var url = opts.url || defaultUrl;
   /* eslint-disable */
 
   (function (i, s, o, g, r, a, m) {
