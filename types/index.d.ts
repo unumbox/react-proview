@@ -6,6 +6,7 @@ export interface InitOptions {
   url?: string;
   screen?: boolean;
   testMode?: boolean;
+  version: number,
   session: string;
   skipHardwareTest?: boolean;
   initCallback: CallbackFunction;
