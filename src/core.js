@@ -46,10 +46,12 @@ export function init(token, options) {
     _debug = true;
   }
   opts.clear = opts.clear || true;
-  opts.screen = opts.screen || true;
+  opts.screen = opts.screen || false;
   opts.session = opts.session || `v4${Math.random()}`;
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
+  opts.flash = false;
+
   if(typeof window.ProctorClient3 === 'undefined') {
     load(opts);
     tv('init', token, opts);

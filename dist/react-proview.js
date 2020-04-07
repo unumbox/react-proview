@@ -171,10 +171,11 @@ function init(token, options) {
   }
 
   opts.clear = opts.clear || true;
-  opts.screen = opts.screen || true;
+  opts.screen = opts.screen || false;
   opts.session = opts.session || "v4".concat(Math.random());
   opts.skipHardwareTest = opts.skipHardwareTest || false;
   opts.initCallback = opts.initCallback || defaultCb;
+  opts.flash = false;
 
   if (typeof window.ProctorClient3 === 'undefined') {
     (0, _load["default"])(opts);
