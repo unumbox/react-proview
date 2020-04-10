@@ -8,7 +8,7 @@ const _isNotBrowser = typeof window === 'undefined' || typeof document === 'unde
 let _debug = false;
 const _testMode = false;
 
-const interalTv = (...args) => {
+const internalTV = (...args) => {
   if (_testMode) return false;
   if (_isNotBrowser) return false;
   if (!window.tv) return warn('ReactProview.initialize must be called first or Proview should be loaded manually');
@@ -21,7 +21,7 @@ const interalTv = (...args) => {
  */
 export function tv(...args) {
   if (args.length > 0) {
-    interalTv(...args);
+    internalTV(...args);
     if (_debug) {
       log('called tv(\'arguments\');');
       log(`with arguments: ${JSON.stringify(args)}`);
@@ -52,7 +52,7 @@ export function init(token, options) {
   opts.initCallback = opts.initCallback || defaultCb;
   opts.flash = false;
 
-  if(typeof window.ProctorClient3 === 'undefined') {
+  if (typeof window.ProctorClient3 === 'undefined') {
     load(opts);
     tv('init', token, opts);
   }
