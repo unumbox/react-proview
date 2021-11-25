@@ -1,0 +1,1 @@
+A basic React component to implement a Proview Client
