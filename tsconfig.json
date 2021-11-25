@@ -2,8 +2,9 @@
     "compilerOptions": {
         "module": "commonjs",
         "lib": [
-            "es6",
-            "dom"
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
         ],
         "noImplicitAny": true,
         "noImplicitThis": true,
@@ -16,8 +17,7 @@
         ],
         "types": [],
         "noEmit": true,
-        "forceConsistentCasingInFileNames": true
-    },
-    "files": [
-        "index.d.ts"    ]
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+    }
 }
